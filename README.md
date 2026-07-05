@@ -1,5 +1,7 @@
 # ShipAny Template Two
 
+This repository now powers Watti, an electricity calculator for appliance cost and bill savings.
+
 ## Getting Started
 
 read [ShipAny Document](https://shipany.ai/docs/quick-start) to start your AI SaaS project.
