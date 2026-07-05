@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watti 品牌方案 v2 - 围绕 A/C 细化</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+    background: #f4f5f7; color: #1a1d23; padding: 40px 24px; line-height: 1.6;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  h1 { font-size: 26px; margin-bottom: 6px; }
+  .sub { color: #6b7280; margin-bottom: 36px; font-size: 14px; }
+  .scheme {
+    background: #fff; border-radius: 16px; padding: 32px;
+    margin-bottom: 32px; box-shadow: 0 1px 3px rgba(0,0,0,.06);
+    border: 1px solid #e5e7eb;
+  }
+  .scheme-head { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+  .badge {
+    font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 99px;
+    background: #eef2ff; color: #4f46e5;
+  }
+  .scheme h2 { font-size: 20px; }
+  .scheme .desc { color: #6b7280; font-size: 14px; margin-bottom: 22px; }
+  .row { display: grid; grid-template-columns: 300px 1fr; gap: 28px; align-items: start; }
+  @media (max-width: 800px) { .row { grid-template-columns: 1fr; } }
+
+  .swatches { display: flex; gap: 8px; margin-bottom: 18px; }
+  .swatch { flex: 1; border-radius: 10px; height: 64px; position: relative; }
+  .swatch span {
+    position: absolute; bottom: 6px; left: 8px; font-size: 10px;
+    color: #fff; font-family: monospace; opacity: .9;
+  }
+  .swatch.light span { color: #374151; }
+
+  .logos { display: flex; gap: 16px; align-items: center; margin-bottom: 14px; }
+  .logo-tile {
+    width: 96px; height: 96px; border-radius: 22px; display: flex;
+    align-items: center; justify-content: center;
+  }
+  .logo-name { display: flex; align-items: center; gap: 10px; }
+  .logo-sm { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .wordmark { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+
+  .preview { border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden; }
+  .preview .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 18px; border-bottom: 1px solid #eef0f3; background: #fff;
+  }
+  .preview .nav .links { display: flex; gap: 16px; font-size: 13px; color: #6b7280; }
+  .preview .hero { padding: 26px 18px 20px; background: #fff; }
+  .preview .hero h3 { font-size: 20px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 6px; }
+  .preview .hero p { font-size: 13px; color: #6b7280; margin-bottom: 14px; }
+  .btn {
+    display: inline-block; padding: 9px 18px; border-radius: 10px;
+    color: #fff; font-size: 13px; font-weight: 600; text-decoration: none;
+  }
+  .card-line { display: flex; align-items: center; gap: 10px; padding: 10px 18px 18px; background: #fff; }
+  .bar-bg { flex: 1; height: 8px; border-radius: 99px; background: #eef0f3; overflow: hidden; }
+  .bar { height: 100%; border-radius: 99px; }
+  .money { font-size: 13px; font-weight: 700; }
+  .result-chip {
+    margin: 0 18px 18px; padding: 12px 16px; border-radius: 12px;
+    display: flex; justify-content: space-between; align-items: center; font-size: 13px;
+  }
+  .result-chip b { font-size: 20px; }
+  .verdict { margin-top: 18px; font-size: 13.5px; background: #f9fafb; border-radius: 10px; padding: 12px 16px; color: #374151; }
+  .verdict b { color: #111827; }
+
+  /* 高亮色横评条 */
+  .accent-compare { display:flex; gap:10px; margin: 8px 0 30px; }
+  .accent-compare .chip {
+    flex:1; text-align:center; padding: 14px 8px; border-radius: 12px;
+    font-size: 12px; font-weight: 700; font-family: monospace;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>⚡ Watti 品牌方案 v2 — 围绕 A / C 收敛</h1>
+  <p class="sub">你的反馈：A 的蓝色方向对，但高亮绿偏黄；C 的电流感也好。下面把高亮色从"黄绿"往"纯绿 → 青绿 → 青"三档推，主蓝统一在 A/C 之间取舍。</p>
+
+  <!-- 高亮色一字排开对比 -->
+  <div style="font-size:14px;font-weight:700;margin-bottom:8px;">先横向看一眼 4 个高亮色（旧 vs 新）：</div>
+  <div class="accent-compare">
+    <div class="chip" style="background:#E7FF52;color:#3F4A00;">#E7FF52<br>旧·偏黄 ✕</div>
+    <div class="chip" style="background:#3DF08C;color:#064E3B;">#3DF08C<br>纯电绿</div>
+    <div class="chip" style="background:#2BE4B0;color:#063F33;">#2BE4B0<br>青绿电流</div>
+    <div class="chip" style="background:#22D3EE;color:#083344;">#22D3EE<br>青色(C原版)</div>
+  </div>
+
+  <!-- ============ 方案 A2 ============ -->
+  <div class="scheme">
+    <div class="scheme-head">
+      <span class="badge">方案 A2</span>
+      <h2>Volt Green — 电光蓝 × 纯电绿</h2>
+    </div>
+    <p class="desc">保留 A 的电光蓝，高亮从黄绿换成不带黄味的"纯电绿"，绿色=省钱的心智最直接，也是三档里最鲜活的。</p>
+    <div class="row">
+      <div>
+        <div class="logos">
+          <div class="logo-tile" style="background: linear-gradient(135deg,#2E5BFF,#1B3FE0);">
+            <svg width="56" height="56" viewBox="0 0 48 48" fill="none">
+              <path d="M27 6 L13 27 h8 L19 42 L35 20 h-9 L27 6 Z" fill="#3DF08C"/>
+            </svg>
+          </div>
+          <div class="logo-name">
+            <div class="logo-sm" style="background: linear-gradient(135deg,#2E5BFF,#1B3FE0);">
+              <svg width="24" height="24" viewBox="0 0 48 48" fill="none"><path d="M27 6 L13 27 h8 L19 42 L35 20 h-9 L27 6 Z" fill="#3DF08C"/></svg>
+            </div>
+            <span class="wordmark" style="color:#1B3FE0;">watti</span>
+          </div>
+        </div>
+        <div class="swatches">
+          <div class="swatch" style="background:#2E5BFF;"><span>#2E5BFF 主色</span></div>
+          <div class="swatch" style="background:#1B3FE0;"><span>#1B3FE0 深</span></div>
+          <div class="swatch light" style="background:#3DF08C;"><span>#3DF08C 高亮</span></div>
+          <div class="swatch light" style="background:#EEF2FF;"><span>#EEF2FF 底</span></div>
+        </div>
+      </div>
+      <div class="preview">
+        <div class="nav">
+          <div class="logo-name">
+            <div class="logo-sm" style="width:28px;height:28px;border-radius:7px;background:linear-gradient(135deg,#2E5BFF,#1B3FE0);">
+              <svg width="16" height="16" viewBox="0 0 48 48" fill="none"><path d="M27 6 L13 27 h8 L19 42 L35 20 h-9 L27 6 Z" fill="#3DF08C"/></svg>
+            </div>
+            <b style="font-size:15px;color:#1B3FE0;">watti</b>
+          </div>
+          <div class="links"><span>Calculator</span><span>Features</span><span>FAQ</span></div>
+        </div>
+        <div class="hero">
+          <h3>Free <span style="color:#2E5BFF;">Electricity Calculator</span> for Home Appliances</h3>
+          <p>See what every appliance adds to your electricity bill.</p>
+          <a class="btn" style="background:#2E5BFF;">⚡ Start Calculating</a>
+        </div>
+        <div class="card-line">
+          <span style="font-size:13px;width:130px;">Air Conditioner</span>
+          <div class="bar-bg"><div class="bar" style="width:84%;background:#2E5BFF;"></div></div>
+          <span class="money" style="color:#1B3FE0;">$145/mo</span>
+        </div>
+        <div class="result-chip" style="background:#EEF2FF;color:#1B3FE0;">
+          <span>Per month</span><b>$172 <small style="font-weight:400;">· 1011 kWh</small></b>
+          <span style="background:#3DF08C;color:#064E3B;padding:4px 10px;border-radius:99px;font-weight:700;font-size:12px;">Save $18/mo ⚡</span>
+        </div>
+      </div>
+    </div>
+    <div class="verdict"><b>辨识度：★★★★★</b> — 蓝绿撞色在计算器类站点里没人用；绿色直接呼应"帮你省下的钱"，Save 徽章一眼看懂。</div>
+  </div>
+
+  <!-- ============ 方案 AC ============ -->
+  <div class="scheme">
+    <div class="scheme-head">
+      <span class="badge" style="background:#ecfdf5;color:#059669;">方案 AC · 混血推荐</span>
+      <h2>Current Volt — A 的蓝 × C 的电流感（青绿）</h2>
+    </div>
+    <p class="desc">主色用 A 更正的电光蓝，深色借 C 的深靛（比 A 的深蓝更有质感），高亮取绿与青的中间值"青绿电流"——既有电流的冷感，又保留绿色的省钱暗示。两个方案的优点合体。</p>
+    <div class="row">
+      <div>
+        <div class="logos">
+          <div class="logo-tile" style="background:#0F1B4D;">
+            <svg width="56" height="56" viewBox="0 0 48 48" fill="none">
+              <path d="M27 6 L13 27 h8 L19 42 L35 20 h-9 L27 6 Z" stroke="#2BE4B0" stroke-width="3" stroke-linejoin="round" fill="#2E5BFF"/>
+            </svg>
+          </div>
+          <div class="logo-name">
+            <div class="logo-sm" style="background:#0F1B4D;">
+              <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><path d="M27 6 L13 27 h8 L19 42 L35 20 h-9 L27 6 Z" stroke="#2BE4B0" stroke-width="3" stroke-linejoin="round" fill="#2E5BFF"/></svg>
+            </div>
+            <span class="wordmark" style="color:#0F1B4D;">watti</span>
+          </div>
+        </div>
+        <div class="swatches">
+          <div class="swatch" style="background:#2E5BFF;"><span>#2E5BFF 主色</span></div>
+          <div class="swatch" style="background:#0F1B4D;"><span>#0F1B4D 深</span></div>
+          <div class="swatch light" style="background:#2BE4B0;"><span>#2BE4B0 高亮</span></div>
+          <div class="swatch light" style="background:#EEF2FF;"><span>#EEF2FF 底</span></div>
+        </div>
+      </div>
+      <div class="preview">
+        <div class="nav">
+          <div class="logo-name">
+            <div class="logo-sm" style="width:28px;height:28px;border-radius:7px;background:#0F1B4D;">
+              <svg width="15" height="15" viewBox="0 0 48 48" fill="none"><path d="M27 6 L13 27 h8 L19 42 L35 20 h-9 L27 6 Z" stroke="#2BE4B0" stroke-width="3" stroke-linejoin="round" fill="#2E5BFF"/></svg>
+            </div>
+            <b style="font-size:15px;color:#0F1B4D;">watti</b>
+          </div>
+          <div class="links"><span>Calculator</span><span>Features</span><span>FAQ</span></div>
+        </div>
+        <div class="hero">
+          <h3>Free <span style="color:#2E5BFF;">Electricity Calculator</span> for Home Appliances</h3>
+          <p>See what every appliance adds to your electricity bill.</p>
+          <a class="btn" style="background:#2E5BFF;">⚡ Start Calculating</a>
+        </div>
+        <div class="card-line">
+          <span style="font-size:13px;width:130px;">Air Conditioner</span>
+          <div class="bar-bg"><div class="bar" style="width:84%;background:#2E5BFF;"></div></div>
+          <span class="money" style="color:#0F1B4D;">$145/mo</span>
+        </div>
+        <div class="result-chip" style="background:#EEF2FF;color:#0F1B4D;">
+          <span>Per month</span><b>$172 <small style="font-weight:400;">· 1011 kWh</small></b>
+          <span style="background:#2BE4B0;color:#063F33;padding:4px 10px;border-radius:99px;font-weight:700;font-size:12px;">Save $18/mo ⚡</span>
+        </div>
+      </div>
+    </div>
+    <div class="verdict"><b>辨识度：★★★★★</b> — 深靛底 + 描边闪电的 logo 比纯色块更精致；青绿高亮独特（不撞天气蓝、不撞金融绿），整体气质在"活泼"和"专业"正中间。</div>
+  </div>
+
+  <!-- ============ 方案 C2 ============ -->
+  <div class="scheme">
+    <div class="scheme-head">
+      <span class="badge" style="background:#f5f3ff;color:#7c3aed;">方案 C2</span>
+      <h2>Deep Current — 靛电蓝 × 青电流（C 微调版）</h2>
+    </div>
+    <p class="desc">C 的原班配色保留做对照：靛电蓝主色 + 霓虹青高亮，最"科技电力"，唯一调整是界面文字深色统一用深靛，整体更收敛。</p>
+    <div class="row">
+      <div>
+        <div class="logos">
+          <div class="logo-tile" style="background:#0F1B4D;">
+            <svg width="56" height="56" viewBox="0 0 48 48" fill="none">
+              <path d="M27 6 L13 27 h8 L19 42 L35 20 h-9 L27 6 Z" stroke="#22D3EE" stroke-width="3" stroke-linejoin="round" fill="#4457FF"/>
+            </svg>
+          </div>
+          <div class="logo-name">
+            <div class="logo-sm" style="background:#0F1B4D;">
+              <svg width="22" height="22" viewBox="0 0 48 48" fill="none"><path d="M27 6 L13 27 h8 L19 42 L35 20 h-9 L27 6 Z" stroke="#22D3EE" stroke-width="3" stroke-linejoin="round" fill="#4457FF"/></svg>
+            </div>
+            <span class="wordmark" style="color:#0F1B4D;">watti</span>
+          </div>
+        </div>
+        <div class="swatches">
+          <div class="swatch" style="background:#4457FF;"><span>#4457FF 主色</span></div>
+          <div class="swatch" style="background:#0F1B4D;"><span>#0F1B4D 深</span></div>
+          <div class="swatch light" style="background:#22D3EE;"><span>#22D3EE 高亮</span></div>
+          <div class="swatch light" style="background:#EEF1FF;"><span>#EEF1FF 底</span></div>
+        </div>
+      </div>
+      <div class="preview">
+        <div class="nav">
+          <div class="logo-name">
+            <div class="logo-sm" style="width:28px;height:28px;border-radius:7px;background:#0F1B4D;">
+              <svg width="15" height="15" viewBox="0 0 48 48" fill="none"><path d="M27 6 L13 27 h8 L19 42 L35 20 h-9 L27 6 Z" stroke="#22D3EE" stroke-width="3" stroke-linejoin="round" fill="#4457FF"/></svg>
+            </div>
+            <b style="font-size:15px;color:#0F1B4D;">watti</b>
+          </div>
+          <div class="links"><span>Calculator</span><span>Features</span><span>FAQ</span></div>
+        </div>
+        <div class="hero">
+          <h3>Free <span style="color:#4457FF;">Electricity Calculator</span> for Home Appliances</h3>
+          <p>See what every appliance adds to your electricity bill.</p>
+          <a class="btn" style="background:#4457FF;">⚡ Start Calculating</a>
+        </div>
+        <div class="card-line">
+          <span style="font-size:13px;width:130px;">Air Conditioner</span>
+          <div class="bar-bg"><div class="bar" style="width:84%;background:#4457FF;"></div></div>
+          <span class="money" style="color:#0F1B4D;">$145/mo</span>
+        </div>
+        <div class="result-chip" style="background:#EEF1FF;color:#0F1B4D;">
+          <span>Per month</span><b>$172 <small style="font-weight:400;">· 1011 kWh</small></b>
+          <span style="background:#22D3EE;color:#083344;padding:4px 10px;border-radius:99px;font-weight:700;font-size:12px;">Save $18/mo ⚡</span>
+        </div>
+      </div>
+    </div>
+    <div class="verdict"><b>辨识度：★★★★☆</b> — 最科技、最冷静；但青色高亮不带"省钱"暗示，且靛蓝略偏"开发者工具"气质，对家庭用户稍有距离。</div>
+  </div>
+
+  <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:24px 32px;font-size:14px;color:#374151;">
+    <b style="color:#111827;">📌 我的推荐：方案 AC（Current Volt）</b><br>
+    理由：① 主蓝 #2E5BFF 是你认可的 A 方向，比 C 的靛蓝更明快不老派；② 高亮 #2BE4B0 彻底去掉黄味，同时保住"绿色=省钱"的心智，比 C 的纯青更贴我们的卖点；③ 深靛 #0F1B4D 做 logo 底和标题深色，质感比 A 原版的深蓝更高级。<br><br>
+    选定后我会：把色板转成 oklch 写入 <code>theme.css</code> → 生成正式 logo.png 替换模板默认 logo → 浏览器实测整站效果。
+  </div>
+</div>
+</body>
+</html>

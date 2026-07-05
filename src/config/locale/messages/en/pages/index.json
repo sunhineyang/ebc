@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "title": "Electricity Calculator - Appliance Cost & Savings | Watti",
+    "description": "Free electricity calculator for every appliance. Set your rate per kWh, see daily, monthly and yearly electricity costs, and get tips to lower your bill.",
+    "keywords": "electricity calculator, electricity bill calculator, electricity cost, kwh calculator"
+  },
+  "page": {
+    "title": "Electricity Calculator",
+    "show_sections": [
+      "hero",
+      "calculator",
+      "features",
+      "usage",
+      "faq",
+      "cta"
+    ],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Free Electricity Calculator for Home Appliances",
+        "highlight_text": "Electricity Calculator",
+        "description": "Watti is a free electricity calculator that shows what every appliance adds to your electricity bill. Set your rate, add your appliances, and see daily, monthly and yearly costs — plus clear ways to lower them.",
+        "buttons": [
+          {
+            "title": "Start Calculating",
+            "icon": "Zap",
+            "url": "#calculator",
+            "target": "_self",
+            "variant": "default"
+          }
+        ],
+        "show_avatars": false,
+        "show_award": false
+      },
+      "calculator": {
+        "block": "calculator",
+        "id": "calculator",
+        "title": "Electricity Cost Calculator for Every Appliance",
+        "description": "Add appliances, set your rate per kWh, and watch your energy usage and cost update in real time.",
+        "default_rate": 0.17,
+        "default_presets": ["central-ac"],
+        "show_insights": true
+      },
+      "features": {
+        "id": "features",
+        "title": "Why Watti Beats a Basic Electricity Calculator",
+        "description": "Most electricity calculator tools stop at one appliance and one number. Watti shows the whole picture of your home energy usage.",
+        "items": [
+          {
+            "title": "Whole-Home Appliance List",
+            "description": "Add every appliance you own and see your total electricity cost per day, month and year in one view — not one device at a time.",
+            "icon": "House"
+          },
+          {
+            "title": "See Where the Money Goes",
+            "description": "A cost breakdown bar for every appliance shows which devices quietly drive your electricity bill up.",
+            "icon": "ChartBar"
+          },
+          {
+            "title": "Savings You Can Measure",
+            "description": "Watti turns advice into numbers: run your AC one hour less, switch to LED bulbs, or find lower electricity rates — and see the exact monthly savings.",
+            "icon": "PiggyBank"
+          }
+        ]
+      },
+      "usage": {
+        "block": "features-step",
+        "id": "usage",
+        "title": "How to Use This Electricity Calculator",
+        "description": "Calculate electricity costs in four simple steps. No sign-up needed.",
+        "items": [
+          {
+            "title": "Set Your Electricity Rate",
+            "description": "Enter the price per kWh from your latest bill. Not sure? Start with the US average electricity rate of about 17¢ per kWh.",
+            "icon": "Receipt"
+          },
+          {
+            "title": "Add Your Appliances",
+            "description": "Pick from 20 appliance presets with typical wattages, or add a custom device. Adjust watts, hours per day and quantity.",
+            "icon": "Plug"
+          },
+          {
+            "title": "Read Your Results",
+            "description": "See your electricity cost per day, month and year, plus each appliance's share of the total energy usage.",
+            "icon": "ChartNoAxesColumn"
+          },
+          {
+            "title": "Cut Your Bill",
+            "description": "Follow the quantified savings tips — run heavy appliances less, switch to LED, or find a lower rate — then recalculate to lock in the savings.",
+            "icon": "PiggyBank"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Electricity Calculator FAQ",
+        "description": "Common questions about how to calculate electricity costs and usage.",
+        "items": [
+          {
+            "question": "How does this electricity calculator work?",
+            "answer": "The electricity calculator multiplies each appliance's watts by its hours of use to get energy in kWh, then multiplies kWh by your rate to get the cost. It adds every appliance together for your household total."
+          },
+          {
+            "question": "How do I calculate my electricity bill?",
+            "answer": "Add every major appliance in your home, set your rate per kWh, and the monthly total works as an electricity bill calculator for the usage part of your bill. Fixed fees and taxes come on top."
+          },
+          {
+            "question": "Where do I find my electricity rate per kWh?",
+            "answer": "Check the price per kWh on your latest electricity bill. If you cannot find it, divide the bill total minus fixed fees by the kWh used that month."
+          },
+          {
+            "question": "Which appliances use the most electricity?",
+            "answer": "Heating and cooling usually top the list — air conditioners, space heaters and water heaters. EV chargers and clothes dryers are heavy users too. Add yours to see your own ranking."
+          },
+          {
+            "question": "What is the average electricity bill in the US?",
+            "answer": "It varies by state and season, but most US households pay between $100 and $200 per month. Compare your result from the electricity calculator with your real average electricity bill to spot gaps."
+          },
+          {
+            "question": "Is this electricity calculator free?",
+            "answer": "Yes. Watti is completely free with no sign-up required. Questions or feedback? Email us at support@electricitycalculator.pro."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Stop Guessing Your Electricity Bill",
+        "description": "Add your appliances above and use this free electricity calculator to know exactly what every device costs you each month.",
+        "buttons": [
+          {
+            "title": "Try the Calculator",
+            "icon": "Zap",
+            "url": "#calculator",
+            "target": "_self",
+            "variant": "default"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+allowBuilds:
+  '@tailwindcss/oxide': set this to true or false
+  esbuild: set this to true or false
+  sharp: set this to true or false
+  unrs-resolver: set this to true or false
+  workerd: set this to true or false
+dangerouslyAllowAllBuilds: true
+# pnpm 配置：允许以下依赖运行安装时的构建脚本
+# （sharp 处理图片、esbuild/workerd 编译、oxide 是 tailwind 引擎，都是必需的）
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
+  - sharp
+  - unrs-resolver
+  - workerd
